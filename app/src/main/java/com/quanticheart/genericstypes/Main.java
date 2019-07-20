@@ -31,39 +31,20 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 7:36:57 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/20 at 7:42:25 for quantic heart studios
  *
  */
 
-apply plugin: 'com.android.application'
+package com.quanticheart.genericstypes;
 
-apply plugin: 'kotlin-android'
+import android.os.Bundle;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-apply plugin: 'kotlin-android-extensions'
+public class Main extends AppCompatActivity {
 
-android {
-    compileSdkVersion 29
-    defaultConfig {
-        applicationId "com.quanticheart.genericstypes"
-        minSdkVersion 23
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-}
-
-dependencies {
-
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-
 }
