@@ -31,26 +31,18 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 7:42:25 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/20 at 9:58:11 for quantic heart studios
  *
  */
 
-package com.quanticheart.genericstypes;
+package com.quanticheart.genericstypes.Util;
 
-import android.app.Activity;
-import android.os.Bundle;
-import androidx.annotation.Nullable;
-import com.quanticheart.genericstypes.GenericClasses.ObjectInterface.TestObjInter;
-import com.quanticheart.genericstypes.GenericClasses.TestSimpleObj;
+import android.util.Log;
 
-public class Main extends Activity {
+public class LogUtil {
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        new TestSimpleObj();
-
-        new TestObjInter();
+    public static void log(String msg) {
+        Log.w("--- GenericType Alert -", msg);
     }
+
 }

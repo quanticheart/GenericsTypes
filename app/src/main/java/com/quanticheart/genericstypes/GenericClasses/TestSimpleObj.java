@@ -31,26 +31,60 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 7:42:25 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/20 at 9:58:46 for quantic heart studios
  *
  */
 
-package com.quanticheart.genericstypes;
+package com.quanticheart.genericstypes.GenericClasses;
 
-import android.app.Activity;
-import android.os.Bundle;
-import androidx.annotation.Nullable;
-import com.quanticheart.genericstypes.GenericClasses.ObjectInterface.TestObjInter;
-import com.quanticheart.genericstypes.GenericClasses.TestSimpleObj;
+import java.util.ArrayList;
 
-public class Main extends Activity {
+import static com.quanticheart.genericstypes.Util.LogUtil.log;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+public class TestSimpleObj {
 
-        new TestSimpleObj();
+    /**
+     * Object is a generic type implemented in Java5
+     * All classes extends a Object Class
+     * <p>
+     * use instanceof to verify Type in Object Class
+     * use Cast for convert Object Class to other Class
+     * Ex: Object object = "TEST";
+     * <p>
+     * String test = (String) object;
+     */
+    private Object object;
 
-        new TestObjInter();
+    public TestSimpleObj() {
+        log("Siple Object Generic");
+
+        object = "";
+        verifyType();
+        object = 1;
+        verifyType();
+        object = true;
+        verifyType();
+        object = new ArrayList<>();
+        verifyType();
     }
+
+    private void verifyType() {
+
+        if (object instanceof String) {
+            log("object is String");
+        }
+
+        if (object instanceof Integer) {
+            log("object is Int");
+        }
+
+        if (object instanceof Boolean) {
+            log("object is boolean");
+        }
+
+        if (object instanceof ArrayList) {
+            log("object is Array");
+        }
+    }
+
 }

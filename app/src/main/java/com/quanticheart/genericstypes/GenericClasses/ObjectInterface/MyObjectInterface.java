@@ -31,26 +31,52 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 7:42:25 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/20 at 10:6:1 for quantic heart studios
  *
  */
 
-package com.quanticheart.genericstypes;
+package com.quanticheart.genericstypes.GenericClasses.ObjectInterface;
 
-import android.app.Activity;
-import android.os.Bundle;
-import androidx.annotation.Nullable;
-import com.quanticheart.genericstypes.GenericClasses.ObjectInterface.TestObjInter;
-import com.quanticheart.genericstypes.GenericClasses.TestSimpleObj;
+public class MyObjectInterface<T> {
 
-public class Main extends Activity {
+    /**
+     * MyObjectInterface receive Generic type with <> for create auto cast in tun time
+     */
+
+    private T t;
+    private Boolean status = true;
+    private String msg = "All ok";
+
+    T getT() {
+        return t;
+    }
+
+    void setT(T t) {
+        this.t = t;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        new TestSimpleObj();
-
-        new TestObjInter();
+    public String toString() {
+        return "MyObjectInterface{" +
+                "t=" + t +
+                ", status=" + status +
+                ", msg='" + msg + '\'' +
+                '}';
     }
 }

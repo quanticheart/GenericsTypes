@@ -31,18 +31,51 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 7:48:27 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/20 at 10:13:57 for quantic heart studios
  *
  */
 
-package com.quanticheart.genericstypes;
+package com.quanticheart.genericstypes.GenericClasses.ObjectInterface;
 
-import android.util.Log;
+import static com.quanticheart.genericstypes.Util.LogUtil.log;
 
-public class LogUtil {
+public class TestObjInter {
 
-    public static void log(String msg) {
-        Log.w("GenericType Alert", msg);
+    /**
+     * MyObjectInterface receive Generic type with <> for create auto cast in tun time
+     * do not need to do type conversion and can remove the ClassCastException at run time
+     */
+    private MyObjectInterface objectSimple;
+    private MyObjectInterface<MyObject> objectInterface;
+    private MyObjectInterface<MyObject2> objectInterface2;
+
+    public TestObjInter() {
+        //
+        objectSimple = new MyObjectInterface();
+
+        //
+        objectInterface = new MyObjectInterface<>();
+        objectInterface.setT(new MyObject());
+
+        //
+        objectInterface2 = new MyObjectInterface<>();
+        objectInterface2.setT(new MyObject2());
+
+        verifyType();
     }
 
+    private void verifyType() {
+
+        log("MyObject in objectSimple");
+        log(objectSimple.toString());
+
+        log("MyObject in objectInterface");
+        log(objectInterface.toString());
+        MyObject object = objectInterface.getT();
+
+        log("MyObject in objectInterface2");
+        log(objectInterface2.toString());
+        MyObject2 object2 = objectInterface2.getT();
+
+    }
 }

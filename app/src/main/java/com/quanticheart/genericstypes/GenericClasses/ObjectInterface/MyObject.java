@@ -31,26 +31,48 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 7:42:25 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/20 at 10:6:33 for quantic heart studios
  *
  */
 
-package com.quanticheart.genericstypes;
+package com.quanticheart.genericstypes.GenericClasses.ObjectInterface;
 
-import android.app.Activity;
-import android.os.Bundle;
-import androidx.annotation.Nullable;
-import com.quanticheart.genericstypes.GenericClasses.ObjectInterface.TestObjInter;
-import com.quanticheart.genericstypes.GenericClasses.TestSimpleObj;
+public class MyObject {
 
-public class Main extends Activity {
+    private String title = "title";
+    private String description = "description";
+    private Float rating = 5f;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Float getRating() {
+        return rating;
+    }
+
+    public void setRating(Float rating) {
+        this.rating = rating;
+    }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        new TestSimpleObj();
-
-        new TestObjInter();
+    public String toString() {
+        return "MyObject{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", rating=" + rating +
+                '}';
     }
 }
