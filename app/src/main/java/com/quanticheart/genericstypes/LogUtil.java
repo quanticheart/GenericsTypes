@@ -31,65 +31,18 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 7:42:25 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/20 at 7:48:27 for quantic heart studios
  *
  */
 
 package com.quanticheart.genericstypes;
 
-import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import android.util.Log;
 
-import java.util.ArrayList;
+public class LogUtil {
 
-import static com.quanticheart.genericstypes.LogUtil.log;
-
-public class Main extends AppCompatActivity {
-    /**
-     * Object is a generic type implemented in Java5
-     * All classes extends a Object Class
-     *
-     * use instanceof to verify Type in Object Class
-     * use Cast for convert Object Class to other Class
-     * Ex: Object object = "TEST";
-     *
-     * String test = (String) object;
-     *
-     */
-    Object object;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        object = "";
-        verifyType();
-        object = 1;
-        verifyType();
-        object = true;
-        verifyType();
-        object = new ArrayList<>();
-        verifyType();
-
+    public static void log(String msg) {
+        Log.w("GenericType Alert", msg);
     }
 
-    private void verifyType() {
-
-        if (object instanceof String) {
-            log("object is String");
-        }
-
-        if (object instanceof Integer) {
-            log("object is Int");
-        }
-
-        if (object instanceof Boolean) {
-            log("object is boolean");
-        }
-
-        if (object instanceof ArrayList) {
-            log("object is Array");
-        }
-    }
 }
