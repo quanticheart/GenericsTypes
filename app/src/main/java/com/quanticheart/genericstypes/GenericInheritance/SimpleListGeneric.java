@@ -31,52 +31,16 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 10:6:1 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/21 at 10:49:39 for quantic heart studios
  *
  */
 
-package com.quanticheart.genericstypes.GenericClasses.ObjectInterface;
+package com.quanticheart.genericstypes.GenericInheritance;
 
-public class MyObjectInterface<T> {
+import java.util.List;
 
-    /**
-     * MyObjectInterface receive Generic type with <> for create auto cast in tun time
-     */
+interface SimpleListGeneric<E, T> extends List<E> {
 
-    private T t;
-    private Boolean status = true;
-    private String msg = "All ok";
 
-    public T getT() {
-        return t;
-    }
 
-    public void setT(T t) {
-        this.t = t;
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    @Override
-    public String toString() {
-        return "MyObjectInterface{" +
-                "t=" + t +
-                ", status=" + status +
-                ", msg='" + msg + '\'' +
-                '}';
-    }
 }

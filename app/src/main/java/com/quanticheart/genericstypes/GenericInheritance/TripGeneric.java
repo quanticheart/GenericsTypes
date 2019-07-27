@@ -31,52 +31,54 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 10:6:1 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/20 at 11:45:42 for quantic heart studios
  *
  */
 
-package com.quanticheart.genericstypes.GenericClasses.ObjectInterface;
+package com.quanticheart.genericstypes.GenericInheritance;
 
-public class MyObjectInterface<T> {
+public class TripGeneric<T, U, S> {
 
-    /**
-     * MyObjectInterface receive Generic type with <> for create auto cast in tun time
-     */
+    private T first;
+    private U second;
+    private S third;
 
-    private T t;
-    private Boolean status = true;
-    private String msg = "All ok";
-
-    public T getT() {
-        return t;
+    public TripGeneric(T first, U second, S third) {
+        this.first = first;
+        this.second = second;
+        this.third = third;
     }
 
-    public void setT(T t) {
-        this.t = t;
+    public T getFirst() {
+        return first;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public void setFirst(T first) {
+        this.first = first;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public U getSecond() {
+        return second;
     }
 
-    public String getMsg() {
-        return msg;
+    public void setSecond(U second) {
+        this.second = second;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public S getThird() {
+        return third;
+    }
+
+    public void setThird(S third) {
+        this.third = third;
     }
 
     @Override
     public String toString() {
-        return "MyObjectInterface{" +
-                "t=" + t +
-                ", status=" + status +
-                ", msg='" + msg + '\'' +
+        return "TripGeneric{" +
+                "first=" + first +
+                ", second=" + second +
+                ", third=" + third +
                 '}';
     }
 }

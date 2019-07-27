@@ -31,52 +31,32 @@
  *  *        |/_/         \===/
  *  *                       =
  *  *
- *  * Copyright(c) Developed by John Alves at 2019/7/20 at 10:6:1 for quantic heart studios
+ *  * Copyright(c) Developed by John Alves at 2019/7/20 at 11:48:22 for quantic heart studios
  *
  */
 
-package com.quanticheart.genericstypes.GenericClasses.ObjectInterface;
+package com.quanticheart.genericstypes.GenericInheritance;
 
-public class MyObjectInterface<T> {
+import android.widget.ArrayAdapter;
 
-    /**
-     * MyObjectInterface receive Generic type with <> for create auto cast in tun time
-     */
+import java.util.ArrayList;
+import java.util.List;
 
-    private T t;
-    private Boolean status = true;
-    private String msg = "All ok";
+public class TestInheritance {
 
-    public T getT() {
-        return t;
+    public TestInheritance() {
+
+        new TripGeneric<>("TESTES", 20, false);
+        new TripGeneric<>(20, false, false);
+        new TripGeneric<>(true, 2f, new ArrayList<>());
+        new TripGeneric<String, Integer, Boolean>("String", 2, true);
+
+        SimpleGeneric<String> sg1 = new SimpleGeneric<String>();
+        SimpleGeneric<ArrayAdapter<String>> sg2 = new SimpleGeneric<>();
+
+        Object test = sg1; // SimpleGeneric<T> parent is Object
+
     }
 
-    public void setT(T t) {
-        this.t = t;
-    }
 
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    @Override
-    public String toString() {
-        return "MyObjectInterface{" +
-                "t=" + t +
-                ", status=" + status +
-                ", msg='" + msg + '\'' +
-                '}';
-    }
 }
